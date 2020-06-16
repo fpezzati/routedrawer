@@ -1,0 +1,26 @@
+{
+  "name": "routedrawingbook",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fpezzati/routedrawer.git"
+  },
+  "author": "fpezzati",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fpezzati/routedrawer/issues"
+  },
+  "homepage": "https://github.com/fpezzati/routedrawer#readme",
+  "devDependencies": {
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.11"
+  },
+  "dependencies": {
+    "mithril": "^2.0.4"
+  }
+}

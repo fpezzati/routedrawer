@@ -1,0 +1,10 @@
+version: '3'
+services:
+  routedrawingbook:
+    build:
+      context: ./routedrawingbook
+      dockerfile: ./routedrawingbook/Dockerfile.dev
+    ports:
+      - '8080:8080'
+    volumes:
+      - .:/
