@@ -3,8 +3,8 @@ services:
   routedrawingbook:
     build:
       context: ./routedrawingbook
-      dockerfile: ./routedrawingbook/Dockerfile.dev
+      dockerfile: Dockerfile.dev
     ports:
-      - '8080:8080'
+      - '8080:9000'
     volumes:
-      - .:/
+      - .:/home/app
