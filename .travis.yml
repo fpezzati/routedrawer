@@ -6,4 +6,4 @@ before-install:
   - docker build -t fpezzati/routedrawingbook -f ./routedrawingbook/Dockerfile.dev .
 
 scripts:
-  - docker run -v $(pwd):/home/app fpezzati/routedrawingbook npm run test
+  - docker run -v $(pwd)/routedrawingbook:/home/app fpezzati/routedrawingbook npm run test
