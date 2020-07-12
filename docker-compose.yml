@@ -5,7 +5,7 @@ services:
       context: ./routedrawingbook
       dockerfile: Dockerfile.dev
     ports:
-      - '8080:9000'
+      - '9000:9000'
     volumes:
       - './routedrawingbook:/home/app'
 # Use of routedrawingbook_test is not that big deal. You cannot use it effectively
