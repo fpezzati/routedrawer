@@ -1,0 +1,9 @@
+sudo: required
+services:
+  - docker
+
+before-install:
+  - docker build -t fpezzati/routedrawingbook -f Dockerfile.dev .
+
+scripts:
+  - docker run -v $(pwd):/home/app fpezzati/routedrawingbook npm run test
