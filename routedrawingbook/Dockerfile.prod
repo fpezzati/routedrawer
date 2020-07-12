@@ -1,0 +1,8 @@
+FROM node:alpine as BUILD
+WORKDIR /home/app
+COPY . .
+RUN npm install
+RUN npm run build
+
+FROM nginx
+COPY --from=BUILD /home/app/bundle /usr/share/nginx/html

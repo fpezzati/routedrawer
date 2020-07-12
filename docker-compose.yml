@@ -1,10 +1,30 @@
 version: '3'
 services:
-  routedrawingbook:
+  routedrawingbook_dev:
     build:
       context: ./routedrawingbook
       dockerfile: Dockerfile.dev
     ports:
       - '8080:9000'
     volumes:
-      - .:/home/app
+      - './routedrawingbook:/home/app'
+# Use of routedrawingbook_test is not that big deal. You cannot use it effectively
+# during development (in TDD) because you have to rerun container after every change
+# using
+# docker exec -it routedrawingbook_dev_1 /bin/sh
+# is far more useful.
+  routedrawingbook_test:
+    build:
+      context: ./routedrawingbook
+      dockerfile: Dockerfile.dev
+    volumes:
+      - './routedrawingbook:/home/app'
+    command: ["npm", "run", "test"]
+  routedrawingbook_prod:
+    build:
+      context: ./routedrawingbook
+      dockerfile: Dockerfile.prod
+    ports:
+      - '8080:80'
+    volumes:
+      - './routedrawingbook:/home/app'
