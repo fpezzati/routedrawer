@@ -6,7 +6,7 @@ services:
   - docker
 
 before-install:
-  - docker build -t fpezzati/routedrawingbook -f ./routedrawingbook/Dockerfile.dev .
+  - docker build -t fpezzati/routedrawingbook -f ./routedrawingbook/Dockerfile.dev ./routedrawingbook
 
 scripts:
   - docker run -v $(pwd)/routedrawingbook:/home/app fpezzati/routedrawingbook npm run test
