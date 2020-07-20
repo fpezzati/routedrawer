@@ -10,3 +10,15 @@ before-install:
 
 scripts:
   - docker run fpezzati/routedrawingbook npm run test
+
+deploy:
+  provider: elasticbeanstalk
+  regiorn: "us-east-2"
+  app: "routedrawingbook"
+  env: "Routedrawingbook-env"
+  bucket_name: "elasticbeanstalk-us-east-2-481819882433"
+  bucket_path: "routedrawingbook"
+  on:
+    branch: master
+  access_key_id: $aws_access_key
+  secret_access_key: $aws_secret_key
