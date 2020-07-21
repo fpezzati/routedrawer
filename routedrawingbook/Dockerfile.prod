@@ -1,4 +1,4 @@
-FROM node:alpine as BUILD
+FROM node:alpine
 WORKDIR /home/app
 COPY ./src ./src
 COPY ./package.json ./package.json
@@ -8,4 +8,4 @@ RUN npm run build
 
 FROM nginx
 EXPOSE 80
-COPY --from=BUILD /home/app/bundle /usr/share/nginx/html
+COPY --from=0 /home/app/bundle /usr/share/nginx/html
